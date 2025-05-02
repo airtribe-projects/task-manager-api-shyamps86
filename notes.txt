@@ -1,0 +1,21 @@
+doubts
+
+1.always query params comes as string even boolean variable also
+2. always restart postman (doubt)
+3. how to pass same get method with query and without query (doubt) ******
+
+      ex: 
+      GET `/api/v1/tasks` - Retrieve all tasks.
+
+      GET `/api/v1/tasks?completed=true` - Retrieve all tasks that are marked as completed.
+
+4. how to debug effectively (should get clarify)
+5.can we use middlewares for input validation
+
+6. typeError--> default "typeError" object in nodejs while throwing an error and how effectvly solve the error handling
+   with database validation errors in production level (****)
+
+7. how we even can write clean concise code from backend side 
+8. best practices for error handling
+
+9. clear explaination on module.exports vs import/export
