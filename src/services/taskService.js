@@ -1,7 +1,7 @@
-const repositaries  = require("../repositaries/index.js");
+const {TaskRepositary}  = require("../repositaries/index.js");
 const ApiError = require("../utils/ApiError.js");
 
-const taskRespositary=new repositaries.TaskRepositary();
+const taskRespositary=new TaskRepositary();
 const getAllTasks = () => {
     const response = taskRespositary.getAll();
     return response;

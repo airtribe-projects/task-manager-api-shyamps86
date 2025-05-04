@@ -1,21 +1,22 @@
 const { Router } = require("express");
-const controllers = require("../../controllers/index.js");
+const {TaskController} = require("../../controllers/index.js");
 const taskBodyCheckMiddleware = require("./../../middlewares/taskMiddleware.js");
+const routeHandler = require("../../middlewares/routeHandler.js");
 
 const TaskRouter = Router();
 
-TaskRouter.get("/", controllers.TaskController.getAllTasks);
+TaskRouter.get("/",routeHandler, TaskController.getAllTasks);
 
-TaskRouter.get("/completed", controllers.TaskController.getAllByCompleted);
+TaskRouter.get("/", TaskController.getAllByCompleted);
 
-TaskRouter.post("/", taskBodyCheckMiddleware, controllers.TaskController.createTask);
+TaskRouter.post("/", taskBodyCheckMiddleware, TaskController.createTask);
 
-TaskRouter.get("/:id", controllers.TaskController.getTask);
+TaskRouter.get("/:id", TaskController.getTask);
 
-TaskRouter.delete("/:id", controllers.TaskController.deleteTask);
+TaskRouter.delete("/:id", TaskController.deleteTask);
 
-TaskRouter.patch("/:id", controllers.TaskController.patchTask);
+TaskRouter.patch("/:id", TaskController.patchTask);
 
-TaskRouter.put("/:id", taskBodyCheckMiddleware, controllers.TaskController.updateTask);
+TaskRouter.put("/:id", taskBodyCheckMiddleware, TaskController.updateTask);
 
 module.exports = TaskRouter;
